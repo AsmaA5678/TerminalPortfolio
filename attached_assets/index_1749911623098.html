@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imane Bamouh - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="welcome-screen">
+    <h1>Welcome to my portfolio</h1>
+    <h2>Dive in with me – IMANE BAMOUH</h2>
+    <p>Type <code>terminal</code> below to enter the interactive experience.</p>
+    <input type="text" id="enter-terminal" placeholder="Type 'terminal' and press Enter" />
+    <br><br>
+    <a href="BAMOUH-Imane-CV-CDI.pdf" target="_blank" class="cv-button">📄 Voir mon CV</a>
+  </div>
+
+  <div id="terminal" style="display:none;">
+    <div id="output">
+      <p>> whoami</p>
+      <p>Imane - Étudiante ingénieure en cybersécurité.</p>
+      <p>Typez <code>help</code> pour voir la liste des commandes disponibles.</p>
+    </div>
+    <div id="input-line">
+      <span class="prompt">$</span>
+      <input type="text" id="command-input" autofocus />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

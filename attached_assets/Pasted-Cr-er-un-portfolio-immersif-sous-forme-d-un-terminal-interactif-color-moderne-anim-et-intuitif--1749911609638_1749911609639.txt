@@ -1,0 +1,122 @@
+Créer un portfolio immersif sous forme d’un terminal interactif coloré, moderne, animé, et intuitif. Le but est de refléter ta personnalité tech, en cybersécurité, avec une interface originale simulant une console de hacking professionnelle.
+
+🖥️ ACCUEIL (page d’intro)
+Affichage en plein écran avec une animation de fond subtile.
+
+Message central :
+
+vbnet
+Copier
+Modifier
+Welcome to my portfolio  
+Feel free to dive in with Imane BAMOUH
+En dessous, un champ de saisie :
+
+python
+Copier
+Modifier
+Type 'terminal' and press Enter
+Quand l'utilisateur tape terminal, il est dirigé vers le terminal principal.
+
+💻 TERMINAL INTERACTIF
+✨ Apparence :
+Couleurs modernes (type vert fluo, violet néon, effets de typing, brillance légère).
+
+Prompt personnalisé :
+
+swift
+Copier
+Modifier
+$B@mouh_Im@n£ sudo ~/guest
+Animation d’intro :
+
+nginx
+Copier
+Modifier
+Welcome to the Terminal  
+Starting up...  
+You can now interact with the Terminal  
+Type help for a list of commands  
+$B@mouh_Im@n£ sudo ~/guest
+⌨️ COMMANDES À IMPLÉMENTER
+Commande	Fonction et comportement
+help	Affiche la liste des commandes (voir plus bas).
+help -d	Affiche la liste des commandes avec description complète.
+help {cmd}	Donne une description détaillée d’une commande précise (ex : help github).
+whoami	Affiche une courte bio :
+Imane BAMOUH – Ingénieure en cybersécurité passionnée par la sécurité offensive, DevSecOps, et la détection de menaces.	
+cv	Ouvre une nouvelle page dédiée contenant le CV complet (PDF intégré).
+skills	Affiche les compétences techniques (langages, outils, sécurité, certifications).
+experience	Liste les expériences pro : Worldgrid/ALTEN et OGSBC avec les missions réalisées.
+projects	Affiche une liste numérotée de projets. Exemples ci-dessous.
+1, 2, etc.	Lorsqu’un numéro est saisi après projects, ouvrir une page HTML dédiée contenant :
+
+Image d’architecture du projet
+
+Description détaillée
+
+Outils et technologies utilisées |
+| contact | Affiche email, LinkedIn, téléphone. |
+| social -l | Affiche des liens sociaux. |
+| clear | Efface l’écran du terminal (mais garde le prompt actif). |
+| reset | Recharge le terminal comme neuf. |
+| exit | Quitte le terminal et revient à la page d’accueil. |
+| ipconfig | Génère de fausses infos IP (effet immersif). |
+| commande inconnue | Affiche :
+
+vbnet
+Copier
+Modifier
+XXXXX is not a valid command. Try again...
+🧠 DÉTAILS DES PROJETS À UTILISER POUR projects → pages individuelles
+🔸 Projet 1 – Analyse de l’attaque Terrapin sur SSH
+Simulation de l’attaque cryptographique Terrapin.
+
+Utilisation d’outils pour capturer les paquets et tester la vulnérabilité SSH.
+
+Technologies : Wireshark, GNS3, SSH, cryptanalyse.
+
+🔸 Projet 2 – Messagerie sécurisée & SOC
+Implémentation d’un serveur mail sécurisé avec Postfix/Dovecot.
+
+Intégration de protocoles SPF, DKIM, DMARC, ClamaV.
+
+Détection des spams avec SpamAssassin, VirusTotal & IA.
+
+Usage dans un contexte SOC (Security Operations Center).
+
+🔸 Projet 3 – DevSecOps avec CI/CD automatisé
+Création d’un pipeline CI/CD sécurisé.
+
+Intégration de tests SAST/DAST automatiques.
+
+Dockerisation des services + orchestrés avec Kubernetes.
+
+Stack : Docker, GitLab CI, Kubernetes.
+
+🔸 Projet 4 – Infrastructure sécurisée pour entreprise
+Intégration d’un SIEM (Splunk) avec Active Directory.
+
+Supervision des logs, création de règles de détection.
+
+Pare-feu : pfSense, tests d’intrusion, contrôles d’accès.
+
+🔧 PAGE POUR CHAQUE PROJET (quand on tape un numéro)
+Créer une page dédiée par projet contenant :
+
+📷 Une image d’architecture (schéma réseau, CI/CD, etc.)
+
+📘 Une description complète
+
+🛠️ Une liste de technologies
+
+📥 Un lien “Back to terminal” ou automatique fermeture de l’onglet après X secondes
+
+📌 CONSEILS POUR L’IA/DÉVELOPPEUR
+Utiliser effets sonores légers (tap clavier, erreur)
+
+Animation du texte comme un vrai terminal (lettre par lettre)
+
+Couleurs stylées (ex : prompt en violet fluo, texte en vert, fond noir)
+
+Code bien structuré pour que ce soit facile à maintenir (chaque commande dans une fonction claire)
