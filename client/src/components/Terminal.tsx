@@ -63,6 +63,25 @@ export default function Terminal({ onExit, onShowProject, onShowCV }: TerminalPr
     }
   }, [output]);
 
+  // Ensure input is always focused
+  useEffect(() => {
+    if (isInitialized && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isInitialized]);
+
+  // Handle clicks to refocus input
+  useEffect(() => {
+    const handleClick = () => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, []);
+
   const addOutput = (text: string, className = 'text-gray-300') => {
     setOutput(prev => [...prev, { text, className }]);
   };
@@ -83,6 +102,19 @@ export default function Terminal({ onExit, onShowProject, onShowCV }: TerminalPr
     if (/^[1-4]$/.test(command)) {
       const projectId = parseInt(command);
       onShowProject(projectId);
+      return;
+    }
+
+    // Handle special commands
+    if (command === 'clear') {
+      setOutput([]);
+      return;
+    }
+
+    if (command === 'reset') {
+      setOutput([]);
+      setCommandHistory([]);
+      setHistoryIndex(-1);
       return;
     }
 
@@ -154,7 +186,7 @@ export default function Terminal({ onExit, onShowProject, onShowCV }: TerminalPr
         
         {/* Input Line */}
         {isInitialized && (
-          <div className="flex items-center space-x-2 flex-shrink-0">
+          <div className="flex items-center space-x-2 flex-shrink-0 bg-[var(--terminal-secondary)] p-2 rounded border border-[var(--electric-purple)]/30">
             <span className="text-[var(--electric-purple)] font-bold">$B@mouh_Im@n£ sudo ~/guest</span>
             <input 
               ref={inputRef}
@@ -162,10 +194,12 @@ export default function Terminal({ onExit, onShowProject, onShowCV }: TerminalPr
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="flex-1 bg-transparent border-none outline-none text-[var(--neon-green)] font-mono text-lg terminal-line"
+              className="flex-1 bg-transparent border-none outline-none text-[var(--neon-green)] font-mono text-lg caret-[var(--neon-green)]"
               autoComplete="off"
               spellCheck="false"
+              placeholder="Type 'help' to get started..."
             />
+            <span className="text-[var(--neon-green)] animate-blink">|</span>
           </div>
         )}
       </div>
