@@ -25,10 +25,7 @@ export default function WelcomeScreen({ onEnterTerminal }: WelcomeScreenProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[var(--terminal-bg)] z-50">
       <div className="text-center space-y-8 px-4">
-        <div 
-          className="glitch-text text-4xl md:text-6xl font-bold text-[var(--neon-green)] neon-glow"
-          data-text="WELCOME TO MY PORTFOLIO"
-        >
+        <div className="text-4xl md:text-6xl font-bold text-[var(--neon-green)] neon-glow">
           WELCOME TO MY PORTFOLIO
         </div>
         
